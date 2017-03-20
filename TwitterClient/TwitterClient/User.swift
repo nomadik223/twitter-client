@@ -25,4 +25,5 @@ class User {
         } else {
             return nil
         }
+    }
 }
