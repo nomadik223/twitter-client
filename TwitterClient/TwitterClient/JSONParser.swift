@@ -13,8 +13,9 @@ typealias JSONParserCallback = (Bool, [Tweet]?)->()
 class JSONParser {
     
     static var sampleJSONData : Data {
+        
         guard let tweetJSONPath = Bundle.main.url(forResource: "tweet", withExtension: "json") else
-        { fatalError("Tweet.json does not exist in this bundle") }
+        { fatalError("Tweet.json does not exist in this bundle.") }
         
         do {
             
@@ -23,32 +24,41 @@ class JSONParser {
             return tweetJSONData
             
         } catch {
-            print("ERROOOOOOOOOOOR")
-            fatalError("Failed to create data from tweetJSONPath")
+            
+            fatalError("Failed to create data from tweetJSONPath.")
+            
         }
     }
     
-    
-    class func tweetsFrom( data: Data, callback: JSONParserCallback){
+    class func tweetsFrom(data: Data, callback: JSONParserCallback) {
         
         do {
+            
             if let rootObject = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String : Any]] {
+                
                 var tweets = [Tweet]()
                 
                 for tweetDictionary in rootObject {
+                    
                     if let tweet = Tweet(json: tweetDictionary) {
+                        
                         tweets.append(tweet)
+                        
                     }
+                    
                 }
                 
                 callback(true, tweets)
                 
             }
+            
         } catch {
+            
             print("Error Serializing JSON")
             callback(false, nil)
+            
         }
-    
+        
     }
-
+    
 }

@@ -14,8 +14,9 @@
 		C8903AC81E8053EC00A7BFCD /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903AC71E8053EC00A7BFCD /* Tweet.swift */; };
 		C8903ACA1E80541400A7BFCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903AC91E80541400A7BFCD /* User.swift */; };
 		C8903ACC1E8054C400A7BFCD /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = C8903ACB1E8054C400A7BFCD /* tweet.json */; };
-		C8903ACE1E806D6C00A7BFCD /* JSONparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903ACD1E806D6C00A7BFCD /* JSONparser.swift */; };
 		C8903AD01E80781700A7BFCD /* HomeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903ACF1E80781700A7BFCD /* HomeTimelineViewController.swift */; };
+		C8903AD21E8166F400A7BFCD /* Tweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903AD11E8166F400A7BFCD /* Tweets.swift */; };
+		C8903AD31E816A8100A7BFCD /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903ACD1E806D6C00A7BFCD /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		C8903AC71E8053EC00A7BFCD /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		C8903AC91E80541400A7BFCD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C8903ACB1E8054C400A7BFCD /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
-		C8903ACD1E806D6C00A7BFCD /* JSONparser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONparser.swift; sourceTree = "<group>"; };
+		C8903ACD1E806D6C00A7BFCD /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		C8903ACF1E80781700A7BFCD /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTimelineViewController.swift; sourceTree = "<group>"; };
+		C8903AD11E8166F400A7BFCD /* Tweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +66,11 @@
 			isa = PBXGroup;
 			children = (
 				C8903ACF1E80781700A7BFCD /* HomeTimelineViewController.swift */,
+				C8903AD11E8166F400A7BFCD /* Tweets.swift */,
 				C8903AB51E803F4700A7BFCD /* AppDelegate.swift */,
 				C8903AB91E803F4700A7BFCD /* Main.storyboard */,
 				C8903AC71E8053EC00A7BFCD /* Tweet.swift */,
-				C8903ACD1E806D6C00A7BFCD /* JSONparser.swift */,
+				C8903ACD1E806D6C00A7BFCD /* JSONParser.swift */,
 				C8903AC91E80541400A7BFCD /* User.swift */,
 				C8903ABC1E803F4700A7BFCD /* Assets.xcassets */,
 				C8903ABE1E803F4700A7BFCD /* LaunchScreen.storyboard */,
@@ -149,11 +152,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8903ACE1E806D6C00A7BFCD /* JSONparser.swift in Sources */,
 				C8903ACA1E80541400A7BFCD /* User.swift in Sources */,
 				C8903AC81E8053EC00A7BFCD /* Tweet.swift in Sources */,
+				C8903AD31E816A8100A7BFCD /* JSONParser.swift in Sources */,
 				C8903AB61E803F4700A7BFCD /* AppDelegate.swift in Sources */,
 				C8903AD01E80781700A7BFCD /* HomeTimelineViewController.swift in Sources */,
+				C8903AD21E8166F400A7BFCD /* Tweets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

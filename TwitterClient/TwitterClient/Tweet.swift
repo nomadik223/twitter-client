@@ -9,8 +9,9 @@
 import Foundation
 
 class Tweet {
-    let text : String
-    let id : String
+    
+    let text: String
+    let id: String
     
     var user: User?
     
@@ -18,9 +19,10 @@ class Tweet {
         if let text = json["text"] as? String, let id = json["id_str"] as? String {
             self.text = text
             self.id = id
-        if let userDictionary = json["user"] as? [String : Any]{
-            self.user = User(json: userDictionary)
+            if let userDictionary = json["user"] as? [String: Any] {
+                self.user = User(json: userDictionary)
             }
+            
         } else {
             return nil
         }
