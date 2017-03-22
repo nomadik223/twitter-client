@@ -17,6 +17,7 @@
 		C8903AD01E80781700A7BFCD /* HomeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903ACF1E80781700A7BFCD /* HomeTimelineViewController.swift */; };
 		C8903AD21E8166F400A7BFCD /* Tweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903AD11E8166F400A7BFCD /* Tweets.swift */; };
 		C8903AD31E816A8100A7BFCD /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903ACD1E806D6C00A7BFCD /* JSONParser.swift */; };
+		C8903AD51E819E9B00A7BFCD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8903AD41E819E9B00A7BFCD /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C8903ACD1E806D6C00A7BFCD /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		C8903ACF1E80781700A7BFCD /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTimelineViewController.swift; sourceTree = "<group>"; };
 		C8903AD11E8166F400A7BFCD /* Tweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweets.swift; sourceTree = "<group>"; };
+		C8903AD41E819E9B00A7BFCD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				C8903AB91E803F4700A7BFCD /* Main.storyboard */,
 				C8903AC71E8053EC00A7BFCD /* Tweet.swift */,
 				C8903ACD1E806D6C00A7BFCD /* JSONParser.swift */,
+				C8903AD41E819E9B00A7BFCD /* API.swift */,
 				C8903AC91E80541400A7BFCD /* User.swift */,
 				C8903ABC1E803F4700A7BFCD /* Assets.xcassets */,
 				C8903ABE1E803F4700A7BFCD /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 				C8903AB61E803F4700A7BFCD /* AppDelegate.swift in Sources */,
 				C8903AD01E80781700A7BFCD /* HomeTimelineViewController.swift in Sources */,
 				C8903AD21E8166F400A7BFCD /* Tweets.swift in Sources */,
+				C8903AD51E819E9B00A7BFCD /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
