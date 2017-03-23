@@ -38,14 +38,14 @@
 		C8903ACF1E80781700A7BFCD /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTimelineViewController.swift; sourceTree = "<group>"; };
 		C8903AD11E8166F400A7BFCD /* Tweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweets.swift; sourceTree = "<group>"; };
 		C8903AD41E819E9B00A7BFCD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		C8903B0C1E8420F000A7BFCD /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailViewController.swift; path = "../../../test-twitter-client/twitter-client/Twitter Client/Twitter Client/UserDetailViewController.swift"; sourceTree = "<group>"; };
-		C8903B0E1E8420FA00A7BFCD /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetDetailViewController.swift; path = "../../../test-twitter-client/twitter-client/Twitter Client/Twitter Client/TweetDetailViewController.swift"; sourceTree = "<group>"; };
+		C8903B0C1E8420F000A7BFCD /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		C8903B0E1E8420FA00A7BFCD /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		C8903B101E8421E700A7BFCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8903B121E8421E700A7BFCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8903B171E84232700A7BFCD /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		C8AF79161E844DE200F29CE8 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
-		C8AF79181E8467CF00F29CE8 /* TweetNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetNibCell.swift; sourceTree = "<group>"; };
-		C8AF79191E8467CF00F29CE8 /* TweetNibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetNibCell.xib; sourceTree = "<group>"; };
+		C8AF79181E8467CF00F29CE8 /* TweetNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetNibCell.swift; path = TwitterClient/TweetNibCell.swift; sourceTree = "<group>"; };
+		C8AF79191E8467CF00F29CE8 /* TweetNibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TweetNibCell.xib; path = TwitterClient/TweetNibCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
