@@ -47,7 +47,7 @@ class API {
         
     }
     
-    private func getOAuthUser(callback: @escaping UserCallback){
+    func getOAuthUser(callback: @escaping UserCallback){
         let url = URL(string: "https://api.twitter.com/1.1/account/verify_credentials.json")
         
         if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil) {

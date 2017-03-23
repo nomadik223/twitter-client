@@ -6,37 +6,35 @@
 //  Copyright © 2017 Austin Rogers. All rights reserved.
 //
 
-
 import Foundation
 
-class Tweets {
+class Tweet {
     
-    static let shared = Tweets()
+    let text: String
+    let id: String
+    let retweet_count: Int
+    let retweet_status: Bool
     
-    var allTweets = [Tweet]()
+    var user: User?
     
-    private init(){}
-    
-    func add(tweet: Tweet){
-        self.allTweets.append(tweet)
-    }
-    
-    func remove(tweet: Tweet){
-        self.allTweets = self.allTweets.filter{ (item) -> Bool in
-            return item.id != tweet.id
+    init?(json: [String: Any]) {
+        if let _ = json["retweeted_status"] as? [String: Any?] {
+            self.retweet_status = true
+            print("True")
+        } else {
+            self.retweet_status = false
+            print("False")
+        }
+        if let text = json["text"] as? String, let id = json["id_str"] as? String, let retweet_count = json["retweet_count"] as? Int {
+            self.text = text
+            self.id = id
+            if let userDictionary = json["user"] as? [String: Any] {
+                self.user = User(json: userDictionary)
+            }
+            self.retweet_count = retweet_count
+            
+        } else {
+            return nil
         }
     }
-    
-    func removeAll(){
-        self.allTweets.removeAll()
-    }
-    
-    func getTweetAt(index: Int) -> Tweet{
-        return self.allTweets[index]
-    }
-    
-    func count() -> Int{
-        return self.allTweets.count
-    }
-    
 }
