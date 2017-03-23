@@ -16,24 +16,78 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    var userProfile : User?
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "My Timeline"
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         updateTimeline()
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue , sender: sender)
+        
+        //        not sure if still needed. Will delete if no further use is shown.
+        
+        //        if segue.identifier == "showDetailSegue" {
+        //
+        //            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+        //                let selectedTweet = self.dataSource[selectedIndex]
+        //
+        //                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
+        //
+        //                destinationController.tweet = selectedTweet
+        //
+        //            }
+        //
+        //        }
+        
+        
+        switch segue.identifier {
+        case "showDetailSegue"?:
+            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+                let selectedTweet = self.dataSource[selectedIndex]
+                
+                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
+                
+                destinationController.tweet = selectedTweet
+                
+            }
+        case "userDetailSegue"?:
+            guard segue.destination is UserDetailViewController else { return }
+        default:
+            return
+        }
+        
+    }
+    
     func updateTimeline() {
+        
+        self.activityIndicator.startAnimating()
+        
+        
         API.shared.getTweets { (tweets) in
+            guard let tweets = tweets else { fatalError("Tweets came back nil.") }
+            
+            
             
             OperationQueue.main.addOperation {
                 
-                self.dataSource = tweets ?? []
+                self.dataSource = tweets
+                self.activityIndicator.stopAnimating()
                 
             }
             
@@ -46,19 +100,12 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TweetCell
         
-        let tweet = dataSource[indexPath.row]
-        
-        cell.textLabel?.text = tweet.text
-        cell.detailTextLabel?.text = tweet.user?.name
+        cell.tweetText.text = dataSource[indexPath.row].text
         
         return cell
         
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.row)")
     }
     
 }
