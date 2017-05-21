@@ -1,8 +1,8 @@
 //
 //  User.swift
-//  TwitterClient
+//  Twitter Client
 //
-//  Created by Kent Rogers on 3/20/17.
+//  Created by Kent Rogers on 3/23/17.
 //  Copyright © 2017 Austin Rogers. All rights reserved.
 //
 
@@ -17,7 +17,6 @@ class User {
     let profileDescription: String
     
     init?(json: [String: Any]) {
-        
         if let name = json["name"] as? String,
             let profileImageURL = json["profile_image_url_https"] as? String,
             let location = json["location"] as? String,

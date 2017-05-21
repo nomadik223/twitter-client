@@ -1,8 +1,8 @@
 //
-//  JSONparser.swift
-//  TwitterClient
+//  JSONParser.swift
+//  Twitter Client
 //
-//  Created by Kent Rogers on 3/20/17.
+//  Created by Kent Rogers on 3/23/17.
 //  Copyright © 2017 Austin Rogers. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ class JSONParser {
     static var sampleJSONData : Data {
         
         guard let tweetJSONPath = Bundle.main.url(forResource: "tweet", withExtension: "json") else
-        { fatalError("Tweet.json does not exist in this bundle.") }
+            { fatalError("Tweet.json does not exist in this bundle.") }
         
         do {
             
@@ -75,7 +75,7 @@ class JSONParser {
             print("Error serializing the User JSON.")
             return
         }
-        
+
     }
     
 }

@@ -1,8 +1,8 @@
 //
 //  API.swift
-//  TwitterClient
+//  Twitter Client
 //
-//  Created by Kent Rogers on 3/21/17.
+//  Created by Kent Rogers on 3/23/17.
 //  Copyright © 2017 Austin Rogers. All rights reserved.
 //
 
@@ -89,8 +89,6 @@ class API {
     
     private func updateTimeLine(url: String, callback: @escaping TweetsCallback) {
         
-        //let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
-        
         if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: URL(string: url), parameters: nil) {
             
             request.account = self.account
@@ -146,9 +144,7 @@ class API {
                     
                     self.account = account
                     self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/home_timeline.json", callback: { (tweets) in
-                        
                         callback(tweets)
-                        
                     })
                     
                 }
@@ -165,14 +161,11 @@ class API {
         
     }
     
-    func getTweetsFor(_ userEx: String, callback: @escaping TweetsCallback) {
-        
-        let urlString = "https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(userEx)"
+    func getTweetsFor(_ user: String, callback: @escaping TweetsCallback) {
+        let urlString = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(user)"
         
         self.updateTimeLine(url: urlString) { (tweets) in
             callback(tweets)
         }
-        
     }
-    
 }

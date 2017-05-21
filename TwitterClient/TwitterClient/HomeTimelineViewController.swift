@@ -1,8 +1,8 @@
 //
 //  HomeTimelineViewController.swift
-//  TwitterClient
+//  Twitter Client
 //
-//  Created by Kent Rogers on 3/20/17.
+//  Created by Kent Rogers on 3/23/17.
 //  Copyright © 2017 Austin Rogers. All rights reserved.
 //
 
@@ -17,9 +17,9 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     var userProfile : User?
-    
+
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var timelineImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -27,41 +27,26 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         
         self.navigationItem.title = "My Timeline"
         
-        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
-        
-        self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
-        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil) //or Bundle.main
+        
+        self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
+        
         updateTimeline()
         
+        self.timelineImage.image = #imageLiteral(resourceName: "foodwars")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue , sender: sender)
         
-        //        not sure if still needed. Will delete if no further use is shown.
-        
-        //        if segue.identifier == TweetDetailViewController.identifier {
-        //
-        //            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
-        //                let selectedTweet = self.dataSource[selectedIndex]
-        //
-        //                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
-        //
-        //                destinationController.tweet = selectedTweet
-        //
-        //            }
-        //
-        //        }
-        
-        
         switch segue.identifier {
-        case "showDetailSegue"?:
+        case TweetDetailViewController.identifier?:
             if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
                 let selectedTweet = self.dataSource[selectedIndex]
                 
@@ -104,10 +89,10 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier, for: indexPath) as! TweetNibCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier , for: indexPath) as! TweetNibCell
         
-        // cell.tweetText.text = dataSource[indexPath.row].text
         let tweet = self.dataSource[indexPath.row]
+        
         cell.tweet = tweet
         
         return cell
@@ -115,9 +100,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         self.performSegue(withIdentifier: TweetDetailViewController.identifier, sender: nil)
-        
     }
     
 }

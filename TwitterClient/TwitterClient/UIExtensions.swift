@@ -1,6 +1,6 @@
 //
 //  UIExtensions.swift
-//  TwitterClient
+//  Twitter Client
 //
 //  Created by Kent Rogers on 3/23/17.
 //  Copyright © 2017 Austin Rogers. All rights reserved.
@@ -12,8 +12,7 @@ extension UIImage {
     
     typealias ImageCallback = (UIImage?)->()
     
-    class func fetchImageWith(_ urlString : String, callback: @escaping ImageCallback) {
-     
+    class func fetchImageWith(_ urlString: String, callback: @escaping ImageCallback) {
         OperationQueue().addOperation {
             
             guard let url = URL(string: urlString) else { callback(nil); return }
@@ -23,23 +22,16 @@ extension UIImage {
                 let image = UIImage(data: data)
                 
                 OperationQueue.main.addOperation {
-                    
                     callback(image)
-                
                 }
                 
+            } else {
+                OperationQueue.main.addOperation {
+                    callback(nil)
+                }
             }
-            
-            OperationQueue.main.addOperation {
-                
-                callback(nil)
-                
-            }
-            
         }
-        
     }
-    
 }
 
 extension UIResponder {
@@ -47,25 +39,3 @@ extension UIResponder {
         return String(describing: self)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
